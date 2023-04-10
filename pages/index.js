@@ -1,7 +1,49 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import { GraphQLClient, gql } from "graphql-request";
 
-const inter = Inter({ subsets: ['latin'] })
+const hygraph = new GraphQLClient(
+  "https://api-ca-central-1.hygraph.com/v2/clga3urel2kwb01ui39oz3srj/master"
+);
+
+const QUERY = gql`
+  {
+    posts {
+      id
+      title
+      slug
+      featuredImage {
+        publishedAt {
+          createdBy {
+            id
+          }
+          url
+        }
+      }
+      content {
+        html
+      }
+      date_published
+      author {
+        name
+        avatar {
+          url
+        }
+      }
+    }
+  }
+`;
+
+export async function getStaticProps() {
+  const {posts} = await hygraph.request(QUERY);
+  return {
+    props: {
+      posts,
+    },
+  }
+}
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -17,5 +59,5 @@ export default function Home() {
         />
       </div> */}
     </main>
-  )
+  );
 }
