@@ -1,5 +1,5 @@
 import { GraphQLClient, gql } from "graphql-request";
-import BlogCard from "@/components/BlogCard";
+import BlogCard from "../src/components/BlogCard";
 
 const hygraph = new GraphQLClient(
   "https://api-ca-central-1.hygraph.com/v2/clga3urel2kwb01ui39oz3srj/master"

@@ -20,7 +20,7 @@ export default function BlogCard({title, slug, author, featuredImage, datePublis
           </div>
 
           <div className={styles.date}>
-            <h3>{datePublished}</h3>
+            <h3 className='font-poppins'>{datePublished}</h3>
           </div>
         </div>
       </div>
