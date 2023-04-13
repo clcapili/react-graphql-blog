@@ -12,7 +12,9 @@ export default function BlogCard({author, title, slug, featuredImage, featuredIm
     <div className={styles.card}>
       <Link href={'/posts/' + slug}>
         <div className={styles.imgContainer}>
-          <img src={featuredImage.url} alt={featuredImageAlt} />
+          <span className='absolute overflow-hidden top-0 left-0 bottom-0 right-0'>
+            <img src={featuredImage.url} alt={featuredImageAlt} className='w-full max-h-full' />
+          </span>
         </div>
 
         <div className={styles.text}>
