@@ -23,9 +23,6 @@ const QUERY = gql`
       }
       featuredImageAlt
       excerpt
-      content {
-        html
-      }
       date_published
     }
   }
