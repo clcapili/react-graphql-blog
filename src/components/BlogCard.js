@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import styles from '../styles/BlogCard.module.scss'
+import styles from '../styles/BlogCard.module.css'
 
 export default function BlogCard({title, slug, author, featuredImage, datePublished}) {
   return(
