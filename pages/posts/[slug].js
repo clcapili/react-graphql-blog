@@ -91,14 +91,14 @@ export default function BlogArticle({post}) {
         <article className='mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue'>
           <header className='mb-4 lg:mb-6 not-format'>
             <address className='flex items-center mb-6 not-italic'>
-                <div className='inline-flex items-center mr-3 text-sm'>
-                  <img className='mr-4 w-16 h-16 rounded-full' src={post.author.avatar.url} alt={post.author.avatarAlt} />
-                  <div>
-                      <a href='#' rel='author' className='text-lg font-medium'>{post.author.name}</a>
-                      <p className='text-base font-light text-gray-500'>{post.author.title}</p>
-                      <p className='text-base font-light text-gray-500'><time pubdate='true' dateTime='2022-02-08' title={date}>{date}</time></p>
-                  </div>
+              <div className='inline-flex items-center mr-3 text-sm'>
+                <img className='mr-4 w-16 h-16 rounded-full' src={post.author.avatar.url} alt={post.author.avatarAlt} />
+                <div>
+                    <a href='#' rel='author' className='text-lg font-medium'>{post.author.name}</a>
+                    <p className='text-base font-light text-gray-500'>{post.author.title}</p>
+                    <p className='text-base font-light text-gray-500'><time pubdate='true' dateTime='2022-02-08' title={date}>{date}</time></p>
                 </div>
+              </div>
             </address>
             <h1 className='mb-4 text-3xl font-extrabold leading-tight lg:mb-6 lg:text-4xl'>{post.title}</h1>
           </header>
